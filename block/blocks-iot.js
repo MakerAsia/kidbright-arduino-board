@@ -38,7 +38,7 @@ Blockly.Blocks["gauge_iot"] = {
 			"nextStatement": null,
 			"colour": gauge_colour,
 			"tooltip": Blockly.Msg.GAUGE_IOT_TOOLTIP,
-			"helpUrl": Blockly.Msg.GAUGE_IOT_HELPURL
+  			"helpUrl": Blockly.Msg.GAUGE_IOT_HELPURL
 		});
 	}
 };
@@ -76,7 +76,7 @@ Blockly.Blocks["gauge_title"] = {
 			"nextStatement": null,
 			"colour": gauge_colour,
 			"tooltip": Blockly.Msg.GAUGE_TITLE_TOOLTIP,
-			"helpUrl": Blockly.Msg.GAUGE_TITLE_HELPURL
+  			"helpUrl": Blockly.Msg.GAUGE_TITLE_HELPURL
 		});
 	}
 };
@@ -114,7 +114,7 @@ Blockly.Blocks["gauge_unit"] = {
 			"nextStatement": null,
 			"colour": gauge_colour,
 			"tooltip": Blockly.Msg.GAUGE_UNIT_TOOLTIP,
-			"helpUrl": Blockly.Msg.GAUGE_UNIT_HELPURL
+  			"helpUrl": Blockly.Msg.GAUGE_UNIT_HELPURL
 		});
 	}
 };
@@ -149,7 +149,7 @@ Blockly.Blocks['gauge_color'] = {
 			"nextStatement": null,
 			"colour": gauge_colour,
 			"tooltip": Blockly.Msg.GAUGE_COLOR_TOOLTIP,
-			"helpUrl": Blockly.Msg.GAUGE_COLOR_HELPURL
+  			"helpUrl": Blockly.Msg.GAUGE_COLOR_HELPURL
 		});
 	}
 };
@@ -241,7 +241,7 @@ Blockly.Blocks["feed_iot"] = {
 			"nextStatement": null,
 			"colour": feed_colour,
 			"tooltip": Blockly.Msg.FEED_IOT_TOOLTIP,
-			"helpUrl": Blockly.Msg.FEED_IOT_HELPURL
+  			"helpUrl": Blockly.Msg.FEED_IOT_HELPURL
 		});
 	}
 };
@@ -279,7 +279,7 @@ Blockly.Blocks["feed_title"] = {
 			"nextStatement": null,
 			"colour": feed_colour,
 			"tooltip": Blockly.Msg.FEED_TITLE_TOOLTIP,
-			"helpUrl": Blockly.Msg.FEED_TITLE_HELPURL
+  			"helpUrl": Blockly.Msg.FEED_TITLE_HELPURL
 		});
 	}
 };
@@ -303,7 +303,7 @@ Blockly.Blocks["feed_main_title"] = {
 			"nextStatement": null,
 			"colour": feed_colour,
 			"tooltip": Blockly.Msg.FEED_MAIN_TITLE_TOOLTIP,
-			"helpUrl": Blockly.Msg.FEED_MAIN_TITLE_HELPURL
+  			"helpUrl": Blockly.Msg.FEED_MAIN_TITLE_HELPURL
 		});
 	}
 };
@@ -341,7 +341,7 @@ Blockly.Blocks["feed_unit"] = {
 			"nextStatement": null,
 			"colour": feed_colour,
 			"tooltip": Blockly.Msg.FEED_UNIT_TOOLTIP,
-			"helpUrl": Blockly.Msg.FEED_UNIT_HELPURL
+  			"helpUrl": Blockly.Msg.FEED_UNIT_HELPURL
 		});
 	}
 };
@@ -453,10 +453,10 @@ Blockly.Blocks["push_notification"] = {
 			    }
 			  ],
 			  "previousStatement": null,
-			  "nextStatement": null,
-			  "colour": gauge_colour,
-			  "tooltip": Blockly.Msg.PUSH_NOTIFICATION_TOOLTIP,
-		  "helpUrl": Blockly.Msg.PUSH_NOTIFICATION_HELPURL
+  			  "nextStatement": null,
+  			  "colour": gauge_colour,
+  			  "tooltip": Blockly.Msg.PUSH_NOTIFICATION_TOOLTIP,
+    		  "helpUrl": Blockly.Msg.PUSH_NOTIFICATION_HELPURL
 		});
 	}
 };

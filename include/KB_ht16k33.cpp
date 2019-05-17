@@ -43,3 +43,4 @@ void KB_8x16Matrix::printFloat(int x, int y, float number) {
     matrix.print(String(number));
     matrix.writeDisplay();
 }
+

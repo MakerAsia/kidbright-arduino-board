@@ -41,7 +41,7 @@ module.exports = {
             blocks : [
                 'controls_if',
                 {
-                    name : 'controls_if' ,
+                    name : 'controls_if' , 
                     blocks : [
                         {
                             mutation : { else : '1'}
@@ -131,7 +131,7 @@ module.exports = {
                 'usbsw_write',
                 'usbsw_toggle',
                 'usbsw_read',
-                'input_read'
+                'input_read'                
             ]
         },
         {
@@ -139,7 +139,7 @@ module.exports = {
             color : '290',
             icon : '/static/icons/SVG/c10.svg',
             blocks : [
-                'advance_task'
+                'advance_task'                
             ]
         },
         {
@@ -175,7 +175,7 @@ module.exports = {
                     name : 'Messaging',
                     icon : '/static/icons/SVG/13.svg',
                     blocks : [
-                        'push_notification',
+                        'push_notification',                        
                     ]
                 }
             ]
