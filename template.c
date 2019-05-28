@@ -28,7 +28,7 @@ ${FUNCTION}
 void setup()
 {
   board.begin();
-  music.begin();
+  //music.begin();
   lm73.begin();
   matrix.displayBegin();
 
@@ -39,4 +39,5 @@ void loop()
 {
   ${LOOP_CODE}
   ${LOOP_EXT_CODE}
+  while(1);
 }

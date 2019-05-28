@@ -434,31 +434,31 @@ Blockly.Blocks["music_duration_opt"] = [
 		'width': 20,
 		'height': 20,
 		'alt': 'Whole'
-	}, "255"],
+	}, "4000"],
 	[{
 		'src': '/static/block_icons/notes/half.svg',
 		'width': 20,
 		'height': 20,
 		'alt': 'Whole'
-	}, "192"],
+	}, "2000"],
 	[{
 		'src': '/static/block_icons/notes/quarter.svg',
 		'width': 20,
 		'height': 20,
 		'alt': 'Whole'
-	}, "129"],
+	}, "1000"],
 	[{
 		'src': '/static/block_icons/notes/eighth.svg',
 		'width': 20,
 		'height': 20,
 		'alt': 'Whole'
-	}, "63"],
+	}, "500"],
 	[{
 		'src': '/static/block_icons/notes/sixteenth.svg',
 		'width': 20,
 		'height': 20,
 		'alt': 'Whole'
-	}, "4"]
+	}, "250"]
 ];
 
 Blockly.Blocks["music_note"] = {
@@ -469,41 +469,41 @@ Blockly.Blocks["music_note"] = {
 			.appendField(new Blockly.FieldDropdown([
 				[Blockly.Msg.MUSIC_NOTE_C7, "2093"],
 				[Blockly.Msg.MUSIC_NOTE_B6, "1976"],
-				[Blockly.Msg.MUSIC_NOTE_BB6, "34"],
-				[Blockly.Msg.MUSIC_NOTE_A6, "33"],
-				[Blockly.Msg.MUSIC_NOTE_GS6, "32"],
-				[Blockly.Msg.MUSIC_NOTE_G6, "31"],
-				[Blockly.Msg.MUSIC_NOTE_FS6, "30"],
-				[Blockly.Msg.MUSIC_NOTE_F6, "29"],
-				[Blockly.Msg.MUSIC_NOTE_E6, "28"],
-				[Blockly.Msg.MUSIC_NOTE_EB6, "27"],
-				[Blockly.Msg.MUSIC_NOTE_D6, "26"],
-				[Blockly.Msg.MUSIC_NOTE_CS6, "25"],
-				[Blockly.Msg.MUSIC_NOTE_C6, "24"],
-				[Blockly.Msg.MUSIC_NOTE_B5, "23"],
-				[Blockly.Msg.MUSIC_NOTE_BB5, "22"],
-				[Blockly.Msg.MUSIC_NOTE_A5, "21"],
-				[Blockly.Msg.MUSIC_NOTE_GS5, "20"],
-				[Blockly.Msg.MUSIC_NOTE_G5, "19"],
-				[Blockly.Msg.MUSIC_NOTE_FS5, "18"],
-				[Blockly.Msg.MUSIC_NOTE_F5, "17"],
-				[Blockly.Msg.MUSIC_NOTE_E5, "16"],
-				[Blockly.Msg.MUSIC_NOTE_EB5, "15"],
-				[Blockly.Msg.MUSIC_NOTE_D5, "14"],
-				[Blockly.Msg.MUSIC_NOTE_CS5, "13"],
-				[Blockly.Msg.MUSIC_NOTE_C5, "12"],
-				[Blockly.Msg.MUSIC_NOTE_B4, "11"],
-				[Blockly.Msg.MUSIC_NOTE_BB4, "10"],
-				[Blockly.Msg.MUSIC_NOTE_A4, "9"],
-				[Blockly.Msg.MUSIC_NOTE_GS4, "8"],
-				[Blockly.Msg.MUSIC_NOTE_G4, "7"],
-				[Blockly.Msg.MUSIC_NOTE_FS4, "6"],
-				[Blockly.Msg.MUSIC_NOTE_F4, "5"],
-				[Blockly.Msg.MUSIC_NOTE_E4, "4"],
-				[Blockly.Msg.MUSIC_NOTE_EB4, "3"],
-				[Blockly.Msg.MUSIC_NOTE_D4, "2"],
-				[Blockly.Msg.MUSIC_NOTE_CS4, "1"],
-				[Blockly.Msg.MUSIC_NOTE_C4, "0"]
+				[Blockly.Msg.MUSIC_NOTE_BB6, "1865"],
+				[Blockly.Msg.MUSIC_NOTE_A6, "1760"],
+				[Blockly.Msg.MUSIC_NOTE_GS6, "1661"],
+				[Blockly.Msg.MUSIC_NOTE_G6, "1568"],
+				[Blockly.Msg.MUSIC_NOTE_FS6, "1480"],
+				[Blockly.Msg.MUSIC_NOTE_F6, "1397"],
+				[Blockly.Msg.MUSIC_NOTE_E6, "1319"],
+				[Blockly.Msg.MUSIC_NOTE_EB6, "1245"],
+				[Blockly.Msg.MUSIC_NOTE_D6, "1175"],
+				[Blockly.Msg.MUSIC_NOTE_CS6, "1109"],
+				[Blockly.Msg.MUSIC_NOTE_C6, "1047"],
+				[Blockly.Msg.MUSIC_NOTE_B5, "988"],
+				[Blockly.Msg.MUSIC_NOTE_BB5, "932"],
+				[Blockly.Msg.MUSIC_NOTE_A5, "880"],
+				[Blockly.Msg.MUSIC_NOTE_GS5, "831"],
+				[Blockly.Msg.MUSIC_NOTE_G5, "784"],
+				[Blockly.Msg.MUSIC_NOTE_FS5, "740"],
+				[Blockly.Msg.MUSIC_NOTE_F5, "698"],
+				[Blockly.Msg.MUSIC_NOTE_E5, "659"],
+				[Blockly.Msg.MUSIC_NOTE_EB5, "622"],
+				[Blockly.Msg.MUSIC_NOTE_D5, "587"],
+				[Blockly.Msg.MUSIC_NOTE_CS5, "554"],
+				[Blockly.Msg.MUSIC_NOTE_C5, "523"],
+				[Blockly.Msg.MUSIC_NOTE_B4, "494"],
+				[Blockly.Msg.MUSIC_NOTE_BB4, "466"],
+				[Blockly.Msg.MUSIC_NOTE_A4, "440"],
+				[Blockly.Msg.MUSIC_NOTE_GS4, "415"],
+				[Blockly.Msg.MUSIC_NOTE_G4, "392"],
+				[Blockly.Msg.MUSIC_NOTE_FS4, "370"],
+				[Blockly.Msg.MUSIC_NOTE_F4, "349"],
+				[Blockly.Msg.MUSIC_NOTE_E4, "330"],
+				[Blockly.Msg.MUSIC_NOTE_EB4, "311"],
+				[Blockly.Msg.MUSIC_NOTE_D4, "294"],
+				[Blockly.Msg.MUSIC_NOTE_CS4, "277"],
+				[Blockly.Msg.MUSIC_NOTE_C4, "262"]
 			]), 'NOTE');
 
 		this.appendDummyInput()
@@ -665,7 +665,7 @@ Blockly.Blocks["music_scale_opt"] = [
 		[Blockly.Msg.MUSIC_NOTE_A6, "33"],
 		[Blockly.Msg.MUSIC_NOTE_G6, "31"],
 		[Blockly.Msg.MUSIC_NOTE_F6, "29"],
-		[Blockly.Msg.MUSIC_NOTE_E6, "28"],
+		[Blockly.Msg.MUSIC_NOTE_EB6, "28"],
 		[Blockly.Msg.MUSIC_NOTE_D6, "26"],
 		[Blockly.Msg.MUSIC_NOTE_C6, "24"],
 		[Blockly.Msg.MUSIC_NOTE_BB5, "22"],
@@ -1439,8 +1439,8 @@ Blockly.Blocks["output_write"] = {
 			.appendField(new Blockly.FieldImage("/static/block_icons/banana.png", 20, 20, "*"))
 			.appendField(Blockly.Msg.OUTPUT_WRITE_TITLE)
 			.appendField(new Blockly.FieldDropdown([
-				["1", "1"],
-				["2", "2"],
+				["1", "26"],
+				["2", "27"],
 				["LED_BT", "KB_LED_BT"],
                 ["LED_WIFI", "KB_LED_WIFI"],
                 ["LED_NTP", "KB_LED_NTP"],
@@ -1448,8 +1448,8 @@ Blockly.Blocks["output_write"] = {
 			]), 'OUTPUT')
 			.appendField(Blockly.Msg.STATUS)
 			.appendField(new Blockly.FieldDropdown([
-				[Blockly.Msg.STATUS_OFF, "0"],
-				[Blockly.Msg.STATUS_ON, "1"]
+				[Blockly.Msg.STATUS_OFF, "1"],
+				[Blockly.Msg.STATUS_ON, "0"]
 			]), 'STATUS');
 		this.setInputsInline(true);
 		this.setPreviousStatement(true);
@@ -1466,8 +1466,12 @@ Blockly.Blocks["output_toggle"] = {
 			.appendField(new Blockly.FieldImage("/static/block_icons/banana.png", 20, 20, "*"))
 			.appendField(Blockly.Msg.OUTPUT_TOGGLE_TITLE)
 			.appendField(new Blockly.FieldDropdown([
-				["1", "1"],
-				["2", "2"]
+				["1", "26"],
+				["2", "27"],
+				["LED_BT", "KB_LED_BT"],
+				["LED_WIFI", "KB_LED_WIFI"],
+				["LED_NTP", "KB_LED_NTP"],
+				["LED_IOT", "KB_LED_IOT"]
 			]), 'OUTPUT')
 			.appendField(Blockly.Msg.STATUS);
 		this.setInputsInline(true);
@@ -1485,8 +1489,8 @@ Blockly.Blocks["output_read"] = {
 			.appendField(new Blockly.FieldImage("/static/block_icons/banana.png", 20, 20, "*"))
 			.appendField(Blockly.Msg.OUTPUT_READ_TITLE)
 			.appendField(new Blockly.FieldDropdown([
-				["1", "1"],
-				["2", "2"]
+				["1", "26"],
+				["2", "27"]
 			]), 'OUTPUT');
 		this.setOutput(true, 'Number');
 		this.setInputsInline(true);
@@ -1505,8 +1509,8 @@ Blockly.Blocks["usbsw_write"] = {
 			.appendField(Blockly.Msg.USBSW_WRITE_TITLE)
 			.appendField(Blockly.Msg.USBSW_WRITE_STATUS)
 			.appendField(new Blockly.FieldDropdown([
-				[Blockly.Msg.STATUS_OFF, "0"],
-				[Blockly.Msg.STATUS_ON, "1"]
+				[Blockly.Msg.STATUS_OFF, "1"],
+				[Blockly.Msg.STATUS_ON, "0"]
 			]), 'STATUS');
 		this.setInputsInline(true);
 		this.setPreviousStatement(true);

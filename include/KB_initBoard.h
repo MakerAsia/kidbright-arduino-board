@@ -10,8 +10,8 @@ class KB_board
  public:
   void begin(void);
   void pinWrite(int pin, bool state);
-  uint16_t pinReadDigital(int pin);
-  uint16_t pinReadAnalog(int pin);
+//  bool pinReadDigital(int pin);
+//  uint16_t pinReadAnalog(int pin);
 
  protected:
   uint16_t readState;
