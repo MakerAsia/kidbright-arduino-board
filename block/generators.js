@@ -76,6 +76,27 @@ Blockly.JavaScript['basic_string'] = function(block) {
 	];
 };
 
+Blockly.JavaScript['basic_TFT_setRotation'] = function(block) {
+	var code = 'tft.setRotation('+block.getFieldValue('rotation')+');\n';
+	return code;
+};
+
+Blockly.JavaScript['basic_TFT_fillScreen'] = function(block) {
+	var code = 'tft.fillScreen('+block.getFieldValue('COLOR')+');\n';
+	return code;
+};
+
+Blockly.JavaScript['basic_TFT_setTextSize'] = function(block) {
+	var code = 'tft.setTextSize('+block.getFieldValue('textSize')+');\n';
+	return code;
+};
+
+Blockly.JavaScript['basic_TFT_print'] = function(block) {
+	var argument = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC);
+	var code = 'tftScreen.printText('+block.getFieldValue('X')+', '+block.getFieldValue('Y')+', String('+argument+'), '+block.getFieldValue('COLOR')+');\n';
+	return code;
+};
+
 // =============================================================================
 // math
 // =============================================================================
@@ -256,6 +277,7 @@ Blockly.JavaScript['logic_sw2_released'] = function(block) {
 	return code;
 	// return ['(get_B2state() == 0 ) || button12.is_sw2_released()', Blockly.JavaScript.ORDER_ATOMIC];
 }
+
 
 // =============================================================================
 // loop
