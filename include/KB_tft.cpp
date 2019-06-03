@@ -2,10 +2,10 @@
 
 void KB_TFT::begin(void) {
     tft.begin();
-    tft.fillScreen(ILI9341_BLACK);
-    tft.setTextColor(ILI9341_WHITE);
-    tft.setRotation(0);
-    tft.setTextSize(0);
+    //tft.fillScreen(ILI9341_BLACK);
+    //tft.setTextColor(ILI9341_WHITE);
+    //tft.setRotation(0);
+    //tft.setTextSize(0);
 }
 
 void KB_TFT::printText(int x, int y, String text, int color) {

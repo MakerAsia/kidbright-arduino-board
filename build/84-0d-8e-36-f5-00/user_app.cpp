@@ -46,27 +46,26 @@ void setup()
   board.begin();
   //music.begin();
   lm73.begin();
-  matrix.displayBegin();
-  tft.begin();
-  tftScreen.begin();
+  //matrix.displayBegin();
+  //tft.begin();
+  //tftScreen.begin();
 
   
   
 }
 void loop()
 {
-  Wire.begin();
-  matrix.printText(0, 0, String(String("OK")));
-  delay(1000);
+  	matrix.displayBegin();
+ 	matrix.printText(0, 0, String(String("m2M")));
+    delay(500);
   
-//Adafruit_ILI9341 tft = Adafruit_ILI9341(19, 18, 21, 22, 27, 32);
-  SPI.begin(22, 32, 21, 19);
-tft.setRotation(1);
-tft.fillScreen(0x0000);
-tft.setTextSize(1);
-tftScreen.printText(0, 0, String(String("KBX")), 0x0000);
-  delay(1000);
-
+  	tft.begin();
+  	tftScreen.begin();
+	tft.setRotation(1);
+	tft.fillScreen(0x0000);
+	tft.setTextSize(1);
+	tftScreen.printText(0, 0, String(String("Hello superman")), 0xFFFF);
+	delay(500);
   
   while(1);
 }
