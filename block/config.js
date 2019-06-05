@@ -179,7 +179,9 @@ module.exports = {
                     name : 'Messaging',
                     icon : '/static/icons/SVG/13.svg',
                     blocks : [
-                        'push_notification',                        
+                        'push_notification',
+                        'mqtt_connector',
+                        'mqtt_write'                      
                     ]
                 }
             ]
