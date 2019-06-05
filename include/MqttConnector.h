@@ -11,7 +11,7 @@
 
 #include <functional>
 #include <ArduinoJson.h>
-#include "cmmc_version.h"
+#include "version.h"
 
 #ifdef ESP8266
 extern "C" {

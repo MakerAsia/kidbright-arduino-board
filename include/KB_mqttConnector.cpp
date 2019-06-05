@@ -3,28 +3,55 @@
 
 extern MqttConnector *mqtt;
 
-extern int relayPinState;
-extern int relayPin;
-extern int LED_PIN;
+int relayPin = KB_OUTPUT1; // pin 26
+int relayPinState = HIGH;
+int LED_PIN = KB_LED_BT; // pin 17
 
-extern char myName[];
+/* BOARD INFO */
+String DEVICE_NAME = "KBPRO-001"; //_DEVICE_NAME; //"YOUR-DEVICE-NAME-001";
+
+/* WIFI INFO */
+String WIFI_SSID = "ampere";       //_WIFI_SSID; //"ampere";
+String WIFI_PASSWORD = "espertap"; //_WIFI_PASSWORD; //"espertap";
+
+/* MQTT INFO */
+String MQTT_HOST = "mqtt.cmmc.io";
+String MQTT_USERNAME = "";
+String MQTT_PASSWORD = "";
+String MQTT_CLIENT_ID = "";
+
+String MQTT_PREFIX = "KBPRO/"; //bufferPrefix; //"WORKSHOP/";
+
+int MQTT_PORT = 1883;
+int PUBLISH_EVERY = 10L * 1000;
+int MQTT_CONNECT_TIMEOUT = 10;
+
+// extern int relayPinState;
+// extern int relayPin;
+// extern int LED_PIN;
+
+char myName[40];
 
 static void readSensor();
 
-extern String DEVICE_NAME;
-extern int PUBLISH_EVERY;
+// extern String DEVICE_NAME;
+// extern int PUBLISH_EVERY;
+// extern String MQTT_HOST;
+// extern String MQTT_USERNAME;
+// extern String MQTT_PASSWORD;
+// extern String MQTT_CLIENT_ID;
+// extern String MQTT_PREFIX;
+// extern String WIFI_SSID;
+// extern String WIFI_PASSWORD;
+// extern int MQTT_PORT;
+// extern int PUBLISH_EVERY;
+// extern int MQTT_CONNECT_TIMEOUT;
 
-extern String MQTT_HOST;
-extern String MQTT_USERNAME;
-extern String MQTT_PASSWORD;
-extern String MQTT_CLIENT_ID;
-extern String MQTT_PREFIX;
-extern int MQTT_PORT;
-extern int PUBLISH_EVERY;
-extern int MQTT_CONNECT_TIMEOUT;
-
-extern void register_publish_hooks();
-extern void register_receive_hooks();
+void register_publish_hooks();
+void register_receive_hooks();
+void init_hardware();
+void init_wifi();
+void init_mqtt();
 
 /* ######## MQTT BEGIN ########*/
 void KB_mqttConnector::beginMqtt(void)
@@ -34,14 +61,14 @@ void KB_mqttConnector::beginMqtt(void)
   init_mqtt();
 }
 
-void KB_mqttConnector::init_hardware()
+void init_hardware()
 {
   pinMode(relayPin, OUTPUT);
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(relayPin, relayPinState);
 }
 
-void KB_mqttConnector::init_wifi()
+void init_wifi()
 {
   WiFi.disconnect();
   delay(20);
