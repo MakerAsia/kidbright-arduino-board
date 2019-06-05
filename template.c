@@ -3,8 +3,9 @@
 #include <WiFi.h>
 #include <Wire.h>
 #include "SPI.h"
-// #include "Adafruit_GFX.h"
-// #include <Adafruit_ILI9341.h>
+#include "Adafruit_GFX.h"
+#include "Adafruit_LEDBackpack.h"
+#include <Adafruit_ILI9341.h>
 
 // #define TFT_DC 18
 // #define TFT_CS 19
@@ -23,6 +24,8 @@ ${EXTINC}
 #include "KB_LM73.h"
 #include "KB_ht16k33.h"
 // #include "KB_tft.h"
+#include "KB_mqttConnector.h"
+#include <MqttConnector.h>
 
 KB_board board = KB_board();
 KB_music music = KB_music();
@@ -30,6 +33,7 @@ KB_LDR ldr = KB_LDR();
 KB_LM73 lm73 = KB_LM73();
 KB_8x16Matrix matrix = KB_8x16Matrix();
 // KB_TFT tftScreen = KB_TFT();
+KB_mqttConnector mqttCon = KB_mqttConnector();
 
 typedef int Number;
 typedef int Boolean;
@@ -49,6 +53,7 @@ void setup()
   matrix.displayBegin();
   // tft.begin();
   // tftScreen.begin();
+  mqttCon.beginMqtt();
 
   ${SETUP_CODE}
   ${BLOCKSETUP}

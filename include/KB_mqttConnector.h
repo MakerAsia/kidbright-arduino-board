@@ -4,35 +4,49 @@
 #include <Arduino.h>
 #include <WiFi.h>
 #include <ArduinoJson.h>
-#include <MqttConnector.h>
 #include <Wire.h>
 #include <SPI.h>
-#include "cmmc_init_mqtt.h"
-#include "cmmc_publish.h"
-#include "cmmc_receive.h"
-#include "cmmc_config.h"
 
-MqttConnector *mqtt; 
+#include <MqttConnector.h>
+// #include "cmmc_config.h"
+// #include "cmmc_init_mqtt.h"
+// #include "cmmc_publish.h"
+// #include "cmmc_receive.h"
 
-int relayPin = KB_OUTPUT1; // pin 26
-int relayPinState = HIGH;
-int LED_PIN = KB_LED_BT;  // pin 17
-
-String _PREFIX = "KBPRO/";
-String _DEVICE_NAME = "KBPRO-001";
-String _WIFI_SSID = "ampere";
-String _WIFI_PASSWORD = "espertap";
+MqttConnector *mqtt;
 
 class KB_mqttConnector
 {
- public:
-  void beginMqtt(char prefix, char devicename, char ssidwifi, char passwifi);
+public:
+  void beginMqtt(void);
+  int relayPin = KB_OUTPUT1; // pin 26
+  int relayPinState = HIGH;
+  int LED_PIN = KB_LED_BT; // pin 17
 
- protected:
+  /* BOARD INFO */
+  String DEVICE_NAME = "KBPRO-001"; //_DEVICE_NAME; //"YOUR-DEVICE-NAME-001";
+
+  /* WIFI INFO */
+  String WIFI_SSID = "ampere";   //_WIFI_SSID; //"ampere";
+  String WIFI_PASSWORD = "espertap"; //_WIFI_PASSWORD; //"espertap";
+
+  /* MQTT INFO */
+  String MQTT_HOST = "mqtt.cmmc.io";
+  String MQTT_USERNAME = "";
+  String MQTT_PASSWORD = "";
+  String MQTT_CLIENT_ID = "";
+
+  String MQTT_PREFIX = "KBPRO/"; //bufferPrefix; //"WORKSHOP/";
+
+  int MQTT_PORT = 1883;
+  int PUBLISH_EVERY = 10L * 1000;
+  int MQTT_CONNECT_TIMEOUT = 10;
+
+protected:
   void init_hardware(void);
   void init_wifi(void);
 
- private:
+private:
 };
 
-#endif /* KB_LM73_h */
+#endif /* KB_mqttConnector_h */
