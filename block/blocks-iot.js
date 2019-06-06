@@ -461,42 +461,42 @@ Blockly.Blocks["push_notification"] = {
 	}
 };
 
-// Blockly.Blocks['mqtt_connector'] = {
-//   init: function() {
-//     this.appendDummyInput()
-//         .appendField("prefix")
-//         .appendField(new Blockly.FieldTextInput("KBPRO"), "PREFIX")
-//         .appendField("device name")
-//         .appendField(new Blockly.FieldTextInput("my-device-001"), "DEVICE")
-//         .appendField("wifi name")
-//         .appendField(new Blockly.FieldTextInput("ampere"), "SSID")
-//         .appendField("wifi password")
-//         .appendField(new Blockly.FieldTextInput("espertap"), "PSK");
-//     this.setPreviousStatement(true, null);
-//     this.setNextStatement(true, null);
-//     this.setColour(20);
-//  		this.setTooltip("");
-//  		this.setHelpUrl("");
-//   }
-// };
+Blockly.Blocks['mqtt_connector'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("prefix")
+        .appendField(new Blockly.FieldTextInput("KBPRO"), "PREFIX")
+        .appendField("device name")
+        .appendField(new Blockly.FieldTextInput("my-device-001"), "DEVICE")
+        .appendField("wifi name")
+        .appendField(new Blockly.FieldTextInput("ampere"), "SSID")
+        .appendField("wifi password")
+        .appendField(new Blockly.FieldTextInput("espertap"), "PSK");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(20);
+ 		this.setTooltip("");
+ 		this.setHelpUrl("");
+  }
+};
 
-// Blockly.Blocks["mqtt_write"] = {
-// 	init: function() {
-// 		this.appendDummyInput()
-// 			.appendField("Device name")
-// 			.appendField(new Blockly.FieldTextInput("kbpro-001"), "DEVICE")
-// 			.appendField(Blockly.Msg.USBSW_WRITE_STATUS)
-// 			.appendField(new Blockly.FieldDropdown([
-// 				["ON", "ON"],
-// 				["OFF", "OFF"]
-// 			]), 'STATUS');
-// 		this.setInputsInline(true);
-// 		this.setPreviousStatement(true);
-// 		this.setNextStatement(true);
-// 		this.setColour(20);
-// 		this.setTooltip("");
-//  		this.setHelpUrl("");
-// 	}
-// };
+Blockly.Blocks["mqtt_write"] = {
+	init: function() {
+		this.appendDummyInput()
+			.appendField("Device name")
+			.appendField(new Blockly.FieldTextInput("kbpro-001"), "DEVICE")
+			.appendField(Blockly.Msg.USBSW_WRITE_STATUS)
+			.appendField(new Blockly.FieldDropdown([
+				["ON", "ON"],
+				["OFF", "OFF"]
+			]), 'STATUS');
+		this.setInputsInline(true);
+		this.setPreviousStatement(true);
+		this.setNextStatement(true);
+		this.setColour(20);
+		this.setTooltip("");
+ 		this.setHelpUrl("");
+	}
+};
 
 }
