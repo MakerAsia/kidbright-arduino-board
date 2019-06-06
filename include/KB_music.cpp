@@ -3,17 +3,17 @@
 //static const uint8_t KB_BUZZER = 13;
 //#define TONE_CHANNEL 0
 
-//void KB_music::begin(void) {
+void KB_music::begin(void) {
 //    ledcSetup(0, 5000, 8);
 //    ledcAttachPin(KB_BUZZER, 0);
 //    ledcWrite(0, 255);
 
-//    ledcWriteTone(channel, 1);
-//    ledcAttachPin(KB_BUZZER, channel);
-//    delay(500);
-//    ledcDetachPin(KB_BUZZER);
-//    delay(500);
-//}
+   ledcWriteTone(channel, 1);
+   ledcAttachPin(KB_BUZZER, channel);
+   delay(500);
+   ledcDetachPin(KB_BUZZER);
+   delay(500);
+}
 
 //void KB_music::note(uint32_t keynote, uint16_t duration) {
 //    ledcSetup(0, keynote, 8);
