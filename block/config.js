@@ -6,7 +6,7 @@ module.exports = {
             color : '230',
             icon : '/static/icons/SVG/c1.svg',
             blocks : [
-                'basic_led16x8',
+                // 'basic_led16x8',
                 'basic_led16x8_clr',
                 'basic_led16x8_2chars',
                 'basic_led16x8_scroll',
@@ -14,10 +14,10 @@ module.exports = {
                 'basic_delay',
                 'basic_forever',
                 'basic_string',
-                'basic_TFT_setRotation',
-                'basic_TFT_fillScreen',
-                'basic_TFT_setTextSize',
-                'basic_TFT_print'
+                // 'basic_TFT_setRotation',
+                // 'basic_TFT_fillScreen',
+                // 'basic_TFT_setTextSize',
+                // 'basic_TFT_print'
             ]
         },
         {
@@ -108,22 +108,22 @@ module.exports = {
                 'sensor_switch2'
             ]
         },
-        {
-            name : 'Clock',
-            color : '19',
-            icon : '/static/icons/SVG/c8.svg',
-            blocks : [
-                'rtc_get',
-                'rtc_get_date',
-                'rtc_get_time',
-                'rtc_get_day',
-                'rtc_get_month',
-                'rtc_get_year',
-                'rtc_get_hour',
-                'rtc_get_minute',
-                'rtc_get_second',
-            ]
-        },
+        // {
+        //     name : 'Clock',
+        //     color : '19',
+        //     icon : '/static/icons/SVG/c8.svg',
+        //     blocks : [
+        //         'rtc_get',
+        //         'rtc_get_date',
+        //         'rtc_get_time',
+        //         'rtc_get_day',
+        //         'rtc_get_month',
+        //         'rtc_get_year',
+        //         'rtc_get_hour',
+        //         'rtc_get_minute',
+        //         'rtc_get_second',
+        //     ]
+        // },
         {
             name : 'I/O',
             color : '19',
@@ -146,45 +146,45 @@ module.exports = {
                 'advance_task'                
             ]
         },
-        {
-            name : 'IoT',
-            color : '195',
-            icon : '/static/icons/SVG/c11.svg',
-            blocks : [
-                {
-                    type : 'category',
-                    name : 'Gauge',
-                    icon : '/static/icons/SVG/13.svg',
-                    blocks : [
-                        'gauge_iot',
-                        'gauge_title',
-                        'gauge_unit',
-                        'gauge_color',
-                        'gauge_minmax'
-                    ]
-                },
-                {
-                    type : 'category',
-                    name : 'Graph',
-                    icon : '/static/icons/SVG/13.svg',
-                    blocks : [
-                        'feed_iot',
-                        'feed_main_title',
-                        'feed_title',
-                        'feed_color'
-                    ]
-                },
-                {
-                    type : 'category',
-                    name : 'Messaging',
-                    icon : '/static/icons/SVG/13.svg',
-                    blocks : [
-                        'push_notification',
-                        'mqtt_connector',
-                        'mqtt_write'                      
-                    ]
-                }
-            ]
-        }
+        // {
+        //     name : 'IoT',
+        //     color : '195',
+        //     icon : '/static/icons/SVG/c11.svg',
+        //     blocks : [
+        //         {
+        //             type : 'category',
+        //             name : 'Gauge',
+        //             icon : '/static/icons/SVG/13.svg',
+        //             blocks : [
+        //                 'gauge_iot',
+        //                 'gauge_title',
+        //                 'gauge_unit',
+        //                 'gauge_color',
+        //                 'gauge_minmax'
+        //             ]
+        //         },
+        //         {
+        //             type : 'category',
+        //             name : 'Graph',
+        //             icon : '/static/icons/SVG/13.svg',
+        //             blocks : [
+        //                 'feed_iot',
+        //                 'feed_main_title',
+        //                 'feed_title',
+        //                 'feed_color'
+        //             ]
+        //         },
+        //         {
+        //             type : 'category',
+        //             name : 'Messaging',
+        //             icon : '/static/icons/SVG/13.svg',
+        //             blocks : [
+        //                 'push_notification',
+        //                 // 'mqtt_connector',
+        //                 // 'mqtt_write'                      
+        //             ]
+        //         }
+        //     ]
+        // }
     ]
 }
