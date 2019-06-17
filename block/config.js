@@ -90,11 +90,11 @@ module.exports = {
             color : '330',
             icon : '/static/icons/SVG/c6.svg',
             blocks : [
-                'music_note',
-                'music_rest',
-                'music_scale',
-                'music_set_volume',
-                'music_get_volume'
+                'music_note'
+                // 'music_rest',
+                // 'music_scale',
+                // 'music_set_volume',
+                // 'music_get_volume'
             ]
         },
         {
@@ -138,14 +138,14 @@ module.exports = {
                 'input_read'                
             ]
         },
-        {
-            name : 'Advance',
-            color : '290',
-            icon : '/static/icons/SVG/c10.svg',
-            blocks : [
-                'advance_task'                
-            ]
-        },
+        // {
+        //     name : 'Advance',
+        //     color : '290',
+        //     icon : '/static/icons/SVG/c10.svg',
+        //     blocks : [
+        //         'advance_task'                
+        //     ]
+        // },
         // {
         //     name : 'IoT',
         //     color : '195',
