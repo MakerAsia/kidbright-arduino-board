@@ -10,9 +10,6 @@ class KB_music
 {
  public:
   void begin(void);
-  void note(uint32_t keynote, uint16_t duration);
-  void rest(int delay);
-  void stop(void);
   void tone(unsigned int frequency, unsigned long duration = 0);
   void noTone();
 

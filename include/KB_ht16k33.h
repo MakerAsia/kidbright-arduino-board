@@ -13,12 +13,10 @@ class KB_8x16Matrix
  public:
   void displayBegin(void);
   void scrollText(String text);
-  void scrollTextWhenReady(String text);
   void printText(int x, int y, String text);
   void printNumber(int x, int y, int number);
   void printFloat(int x, int y, float number);
-
-
+  void drawBitmap(int x, int y, uint8_t *img);
  protected:
   int temp;
   String msg;

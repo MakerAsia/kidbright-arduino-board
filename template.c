@@ -43,6 +43,4 @@ void loop()
 {
   ${LOOP_CODE}
   ${LOOP_EXT_CODE}
-
-  while(1) {delay(1);};
 }

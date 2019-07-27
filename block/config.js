@@ -1,19 +1,31 @@
 module.exports = {
-  initial_blocks: "<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables></variables></xml>",
+  initial_blocks: `<xml>
+                            <block type="arduino_init" deletable="false" x="-100" y="-50">
+                            </block><block type="arduino_loop" deletable="false" x="100" y="-50"></block>
+                      </xml>`,
   base_blocks: [ // use "blocks : [ " in normally situation but this need to override base block from esp-idf platforms
     {
-      name: "Basic",
+      name: "Display",
       color: "230",
-      icon: "/static/icons/SVG/c1.svg",
+      icon: "/static/icons/icons8_picture_96px_1.png",
       blocks: [
-        // 'basic_led16x8',
-        "basic_led16x8_clr",
-        "basic_led16x8_2chars",
-        "basic_led16x8_scroll",
-        "basic_led16x8_scroll_when_ready",
-        "basic_delay",
-        "basic_forever",
-        "basic_string"
+        "display_led16x8",
+        "display_led16x8_clr",
+        { xml: `<block type="display_led16x8_print">
+                <value name="VALUE">
+                    <shadow type="basic_string">
+                      <field name="VALUE">Hello world!</field>
+                    </shadow>
+                </value>
+              </block>` },
+        { xml: `<block type="display_led16x8_scroll">
+                <value name="VALUE">
+                    <shadow type="basic_string">
+                      <field name="VALUE">Hello world!</field>
+                    </shadow>
+                </value>
+              </block>` },
+        'basic_string'
         // 'basic_TFT_setRotation',
         // 'basic_TFT_fillScreen',
         // 'basic_TFT_setTextSize',
@@ -21,68 +33,172 @@ module.exports = {
       ]
     },
     {
-      name: "Math",
-      color: "230",
-      icon: "/static/icons/SVG/c2.svg",
+      name: "Sensor",
+      color: "58",
+      icon: "/static/icons/icons8_thermometer_96px.png",
       blocks: [
-        "math_number",
-        "math_arithmetic",
-        "math_variables_set",
-        "math_variables_get",
-        "math_pow",
-        "math_single",
-        "math_trig",
-        "math_round",
-        "convert_ra_de",
-        "math_random_int",
-        "math_number_property"
+        "sensor_ldr",
+        "sensor_lm73",
+        "sensor_switch1",
+        "sensor_switch2"
       ]
     },
     {
-      name: "Logic",
-      color: "210",
-      icon: "/static/icons/SVG/c3.svg",
+      name: "I/O",
+      color: "19",
+      icon: "/static/icons/icons8_electronics_96px.png",
       blocks: [
-        "controls_if",
         {
-          name: "controls_if",
-          blocks: [
-            {
-              mutation: { else: "1" }
-            }
-          ]
+              xml: `<sep gap="32"></sep><label text="KidBright GPIO" web-class="headline"></label>`
         },
-        "logic_compare",
-        "logic_operation",
-        "logic_negate",
-        "logic_boolean",
-        "logic_led16x8_scroll_ready",
-        "logic_sw1_pressed",
-        "logic_sw1_released",
-        "logic_sw2_pressed",
-        "logic_sw2_released"
+        "output_write",
+        "output_toggle",
+        "output_read",
+        "usbsw_write",
+        "usbsw_toggle",
+        "usbsw_read",
+        "input_read",
+        //======= platform block =======//
+        {
+              xml: `<sep gap="32"></sep><label text="Direct GPIO" web-class="headline"></label>`
+        },
+        {
+          xml:
+            `<block type="io_setpin">
+                        <value name="pin">
+                            <shadow type="math_number">
+                                <field name="NUM">25</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        {
+          xml:
+            `<block type="io_digital_read">
+                        <value name="pin">
+                            <shadow type="math_number">
+                                <field name="NUM">32</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        {
+          xml:
+            `<block type="io_digital_write">
+                        <value name="pin">
+                            <shadow type="math_number">
+                                <field name="NUM">33</field>
+                            </shadow>
+                        </value>
+                        <value name="value">
+                            <shadow type="math_number">
+                                <field name="NUM">1</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        {
+          xml:
+            `<block type="io_analog_read">
+                        <value name="pin">
+                            <shadow type="math_number">
+                                <field name="NUM">36</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        {
+          xml:
+            `<block type="io_analog_write">
+                        <value name="value">
+                            <shadow type="math_number">
+                                <field name="NUM">128</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        {
+          xml:
+            `<block type="io_pwm_write">
+                        <value name="pin">
+                            <shadow type="math_number">
+                                <field name="NUM">36</field>
+                            </shadow>
+                        </value>
+                        <value name="value">
+                            <shadow type="math_number">
+                                <field name="NUM">128</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        {
+          xml:
+            `<block type="io_pulse_in">
+                        <value name="pin">
+                            <shadow type="math_number">
+                                <field name="NUM">36</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        "io_shift_in",
+        {
+          xml:
+            `<block type="io_shift_out">
+                        <value name="data">
+                            <shadow type="math_number">
+                                <field name="NUM">127</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        }
       ]
     },
     {
-      name: "Loop",
-      color: "120",
-      icon: "/static/icons/SVG/c4.svg",
+      name: "Time",
+      color: "230",
+      icon: "/static/icons/icons8_Story_Time_96px.png",
       blocks: [
-        "controls_whileUntil",
-        "loop_break",
-        "loop_continue"
-      ]
-    },
-    {
-      name: "Wait",
-      color: "160",
-      icon: "/static/icons/SVG/c5.svg",
-      blocks: [
-        "wait_led_matrix_ready",
-        "wait_sw1_pressed",
-        "wait_sw1_released",
-        "wait_sw2_pressed",
-        "wait_sw2_released"
+        {
+          xml:
+            `<block type="time_delay">
+                        <value name="delay">
+                            <shadow type="math_number">
+                                <field name="NUM">500</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        {
+          xml:
+            `<block type="time_delay_microsec">
+                        <value name="delay">
+                            <shadow type="math_number">
+                                <field name="NUM">1000</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        "time_millis",
+        "time_micros",
+        {
+          xml: `<sep gap="32"></sep><label text="Internet Time" web-class="headline"></label>`
+        },
+        "time_sync",
+        "time_get_year",
+        "time_get_month",
+        "time_get_day",
+        "time_get_day_of_week",
+        "time_get_hour",
+        "time_get_minute",
+        "time_get_second",
+        {
+          xml: `<sep gap="32"></sep><label text="Local RTC Time" web-class="headline"></label>`
+        },
+        {
+          xml: `<sep gap="16"></sep><label text="Not supported yet" web-class="body-1"></label>`
+        }
       ]
     },
     {
@@ -98,107 +214,485 @@ module.exports = {
       ]
     },
     {
-      name: "Sensor",
-      color: "58",
-      icon: "/static/icons/SVG/c7.svg",
-      blocks: [
-        "sensor_ldr",
-        "sensor_lm73",
-        "sensor_switch1",
-        "sensor_switch2"
-      ]
-    },
-    // {
-    //     name : 'Clock',
-    //     color : '19',
-    //     icon : '/static/icons/SVG/c8.svg',
-    //     blocks : [
-    //         'rtc_get',
-    //         'rtc_get_date',
-    //         'rtc_get_time',
-    //         'rtc_get_day',
-    //         'rtc_get_month',
-    //         'rtc_get_year',
-    //         'rtc_get_hour',
-    //         'rtc_get_minute',
-    //         'rtc_get_second',
-    //     ]
-    // },
-    {
-      name: "I/O",
-      color: "19",
-      icon: "/static/icons/SVG/c9.svg",
-      blocks: [
-        "output_write",
-        "output_toggle",
-        "output_read",
-        "usbsw_write",
-        "usbsw_toggle",
-        "usbsw_read",
-        "input_read"
-      ]
+      name: "Variables",
+      color: "230",
+      icon: "/static/icons/icons8_variable_96px.png",
+      custom: "VARIABLE"
     },
     {
-      type: "category",
-      name: "MQTT",
-      icon: "/static/icons/mqtt.png",
+      name: "Math",
+      color: "230",
+      icon: "/static/icons/calculator.png",
       blocks: [
-        "mqtt_block",
-        "mqtt_connect_block",
-        "mqtt_publish_block",
-        "mqtt_subscribe_block",
-        "mqtt_callback_block",
-        "mqtt_condition_block",
-        "mqtt_loop_block"
+        "math_number",
+        {
+          xml:
+            `<block type="math_arithmetic">
+                        <value name="A">
+                            <shadow type="math_number">
+                                <field name="NUM">1</field>
+                            </shadow>
+                        </value>
+                        <value name="B">
+                            <shadow type="math_number">
+                                <field name="NUM">1</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        {
+          xml:
+            `<block type="math_variables_set">
+                        <value name="VALUE">
+                            <shadow type="math_number">
+                                <field name="NUM">1</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        "math_variables_get",
+        {
+          xml:
+            `<block type="math_pow">
+                        <value name="NUM1">
+                            <shadow type="math_number">
+                                <field name="NUM">2</field>
+                            </shadow>
+                        </value>
+                        <value name="NUM2">
+                            <shadow type="math_number">
+                                <field name="NUM">3</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        /*'math_sqrt',*/
+        {
+          xml:
+            `<block type="math_single">
+                        <value name="NUM">
+                            <shadow type="math_number">
+                                <field name="NUM">9</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        {
+          xml:
+            `<block type="math_trig">
+                        <value name="NUM">
+                            <shadow type="math_number">
+                                <field name="NUM">90</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        {
+          xml:
+            `<block type="math_round">
+                        <value name="NUM">
+                            <shadow type="math_number">
+                                <field name="NUM">1.2</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        /*'math_min',
+        'math_max',
+        'math_map',*/
+        "math_random_int",
+        {
+          xml:
+            `<block type="math_number_property">
+                        <value name="NUMBER_TO_CHECK">
+                            <shadow type="math_number">
+                                <field name="NUM">5</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        }
+      ]
+    },
+    {
+      name: "Logic",
+      color: "230",
+      icon: "/static/icons/icons8_serial_tasks_96px.png",
+      blocks: [
+        "controls_if",
+        {
+          xml: "<block type=\"controls_if\"><mutation else=\"1\"></mutation></block>"
+        },
+        "logic_compare",
+        "logic_operation",
+        "logic_negate",
+        "logic_boolean"
+      ]
+    },
+    {
+      name: "Loops",
+      color: "230",
+      icon: "/static/icons/icons8_repeat_96px.png",
+      blocks: [
+        "basic_forever",
+        "controls_whileUntil",
+        {
+          xml:
+            `<block type="controls_for">
+                        <value name="FROM">
+                            <shadow type="math_number">
+                                <field name="NUM">1</field>
+                            </shadow>
+                        </value>
+                        <value name="TO">
+                            <shadow type="math_number">
+                                <field name="NUM">10</field>
+                            </shadow>
+                        </value>
+                        <value name="BY">
+                            <shadow type="math_number">
+                                <field name="NUM">1</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        "controls_flow_statements"
+      ]
+    },
+    {
+      name: "Advanced",
+      color: "195",
+      icon: "/static/icons/icons8_hacker_128px.png",
+      blocks: [
+        {
+          type: "category",
+          name: "Functions",
+          icon: "/static/icons/icons8_module_96px.png",
+          custom: "PROCEDURE"
+        },
+        /*{
+            type : 'category',
+            name : 'Tasks',
+            icon : '/static/icons/icons8_exercise_96px.png',
+            blocks : [
+                'create task',
+                'start task',
+                'stop task'
+            ]
+        },*/
+        /*{
+            type : 'category',
+            name : 'Arrays',
+            icon : '/static/icons/icons8_stack_96px.png',
+            blocks : [
+                'lists_create_empty',
+                'lists_repeat',
+                'lists_reverse',
+                'lists_isEmpty',
+                'lists_length',
+                'lists_create_with',
+                'lists_indexOf',
+                'lists_getIndex',
+                'lists_setIndex',
+                'lists_getSublist',
+                'lists_sort',
+                'lists_split',
+            ]
+        },*/
+        {
+          type: "category",
+          name: "Text",
+          icon: "/static/icons/icons8_text_color_96px.png",
+          blocks: [
+            "basic_string",
+            {
+              xml:
+                `<block type="text_length">
+                                <value name="VALUE">
+                                    <shadow type="basic_string">
+                                        <field name="VALUE">Hello world!</field>
+                                    </shadow>
+                                </value>                                    
+                            </block>`
+            },
+            "text_join",
+            {
+              xml:
+                `<block type="text_append">
+                                <value name="TEXT">
+                                    <shadow type="basic_string">
+                                        <field name="VALUE">Hello world!</field>
+                                    </shadow>
+                                </value>                                    
+                            </block>`
+            },
+            {
+              xml:
+                `<block type="text_isEmpty">
+                                    <value name="VALUE">
+                                        <shadow type="basic_string">
+                                            <field name="VALUE">Hello world!</field>
+                                        </shadow>
+                                    </value>                                    
+                                </block>`
+            },
+            {
+              xml:
+                `<block type="text_indexOf">
+                                <value name="VALUE">
+                                    <shadow type="basic_string">
+                                        <field name="VALUE">Hello world!</field>
+                                    </shadow>
+                                </value>                                    
+                            </block>`
+            },
+            {
+              xml:
+                `<block type="text_charAt">
+                                <value name="VALUE">
+                                    <shadow type="basic_string">
+                                        <field name="VALUE">Hello world!</field>
+                                    </shadow>
+                                </value>                                    
+                            </block>`
+            },
+            {
+              xml:
+                `<block type="text_getSubstring">
+                                <value name="STRING">
+                                    <shadow type="basic_string">
+                                        <field name="VALUE">Hello world!</field>
+                                    </shadow>
+                                </value>                                    
+                            </block>`
+            },
+            {
+              xml:
+                `<block type="text_changeCase">
+                                <value name="TEXT">
+                                    <shadow type="basic_string">
+                                        <field name="VALUE">Hello world!</field>
+                                    </shadow>
+                                </value>                                    
+                            </block>`
+            },
+            {
+              xml:
+                `<block type="text_trim">
+                                <value name="TEXT">
+                                    <shadow type="basic_string">
+                                        <field name="VALUE">Hello world!</field>
+                                    </shadow>
+                                </value>                                    
+                            </block>`
+            },
+            {
+              xml:
+                `<block type="text_replace">
+                                <value name="TEXT">
+                                    <shadow type="basic_string">
+                                        <field name="VALUE">Hello world!</field>
+                                    </shadow>
+                                </value>                                    
+                            </block>`
+            }
+            //'text_compare',
+            //'text_parse_int'
+          ]
+        },
+        {
+          type: "category",
+          name: "WiFi",
+          icon: "/static/icons/icons8_wifi_router_96px.png",
+          blocks: [
+            "wifi_connect",
+            "wifi_ap",
+            /*{
+                xml :
+                    `<block type="wifi_http_get">
+                        <value name="url">
+                            <shadow type="basic_string">
+                                <field name="VALUE">Hello world!</field>
+                            </shadow>
+                        </value>
+                    </block>`
+            },
+            {
+                xml :
+                    `<block type="wifi_http_post">
+                        <value name="url">
+                            <shadow type="basic_string">
+                                <field name="VALUE">Hello world!</field>
+                            </shadow>
+                        </value>
+                        <value name="data">
+                            <shadow type="basic_string">
+                                <field name="VALUE">Hello world!</field>
+                            </shadow>
+                        </value>
+                    </block>`
+            },*/
+            "wifi_start_server",
+            "wifi_server_on",
+            {
+              xml:
+                `<block type="wifi_server_send">
+                                    <value name="text">
+                                        <shadow type="basic_string">
+                                            <field name="VALUE">Hello world!</field>
+                                        </shadow>
+                                    </value>
+                                </block>`
+            },
+
+            "wifi_get_ip_addr",
+            "wifi_get_ap_ip_addr",
+            "wifi_get_arg"
+          ]
+        },
+        {
+          type: "category",
+          name: "Bluetooth",
+          icon: "/static/icons/icons8_bluetooth_2_96px.png",
+          blocks: [
+            "bt_start",
+            {
+              xml:
+                `<block type="bt_send_string">
+                                    <value name="text">
+                                        <shadow type="basic_string">
+                                            <field name="VALUE">Hello world!</field>
+                                        </shadow>
+                                    </value>
+                                </block>`
+            },
+            "bt_on_receive",
+            "bt_read_data",
+            "bt_read_line"
+          ]
+        },
+        {
+          type: "category",
+          name: "Serial",
+          icon: "/static/icons/SVG/13.svg",
+          blocks: [
+            "serial_usb_init",
+            "serial_hardware_init",
+            "serial_available",
+            {
+              xml:
+                `<block type="serial_write_data">
+                                    <value name="text">
+                                        <shadow type="basic_string">
+                                            <field name="VALUE">Hello world!</field>
+                                        </shadow>
+                                    </value>
+                                </block>`
+            },
+            "serial_write_newline",
+            "serial_read_line",
+            "serial_read_until",
+            "basic_string"
+          ]
+        },
+        {
+          type: "category",
+          name: "Task",
+          icon: "/static/icons/SVG/13.svg",
+          blocks: [
+            { xml: "<label text=\"Custom start\" web-class=\"headline\"></label>" },
+            {
+              xml:
+                `<block type="task_io_interrupt">
+                                <value name="pin">
+                                    <shadow type="math_number">
+                                        <field name="NUM">1</field>
+                                    </shadow>
+                                </value>
+                            </block>`
+            },
+            {
+              xml: `<block type="task_timer_interrupt">
+                                    <value name="delay">
+                                        <shadow type="math_number">
+                                            <field name="NUM">500</field>
+                                        </shadow>
+                                    </value>
+                               </block>`
+            },
+            {
+              xml: `<block type="task_timer_interrupt_once">
+                                        <value name="delay">
+                                            <shadow type="math_number">
+                                                <field name="NUM">500</field>
+                                            </shadow>
+                                        </value>
+                                   </block>`
+            },
+            "task_task",
+            {
+              xml: `<sep gap="32"></sep><label text="Auto start" web-class="headline"></label>`
+            },
+            {
+              xml:
+                `<block type="task_io_interrupt_ext">
+                                <value name="pin">
+                                    <shadow type="math_number">
+                                        <field name="NUM">1</field>
+                                    </shadow>
+                                </value>
+                            </block>`
+            },
+            {
+              xml: `<block type="task_timer_interrupt_ext">
+                                    <value name="delay">
+                                        <shadow type="math_number">
+                                            <field name="NUM">500</field>
+                                        </shadow>
+                                    </value>
+                               </block>`
+            },
+            {
+              xml: `<block type="task_timer_interrupt_once_ext">
+                                        <value name="delay">
+                                            <shadow type="math_number">
+                                                <field name="NUM">500</field>
+                                            </shadow>
+                                        </value>
+                                   </block>`
+            },
+            "task_task_ext",
+            {
+              xml: `<sep gap="32"></sep><label text="Stopper" web-class="headline"></label>`
+            },
+            "task_detach_timer",
+            {
+              xml: `<block type="task_detach_gpio">
+                                        <value name="pin">
+                                            <shadow type="math_number">
+                                                <field name="NUM">1</field>
+                                            </shadow>
+                                        </value>
+                                   </block>`
+            }
+          ]
+        },
+        {
+          type: "category",
+          name: "MQTT",
+          icon: "/static/icons/SVG/13.svg",
+          blocks:
+            [
+              "mqtt_block",
+              "mqtt_connect_block",
+              "mqtt_subscribe_block",
+              "mqtt_callback_block",
+              "topic_block",
+              "payload_block",
+              "mqtt_publish_block",
+              "mqtt_loop_block"
+            ]
+        }
       ]
     }
-    // {
-    //     name : 'Advance',
-    //     color : '290',
-    //     icon : '/static/icons/SVG/c10.svg',
-    //     blocks : [
-    //         'advance_task'
-    //     ]
-    // },
-    // {
-    //     name : 'IoT',
-    //     color : '195',
-    //     icon : '/static/icons/SVG/c11.svg',
-    //     blocks : [
-    //         {
-    //             type : 'category',
-    //             name : 'Gauge',
-    //             icon : '/static/icons/SVG/13.svg',
-    //             blocks : [
-    //                 'gauge_iot',
-    //                 'gauge_title',
-    //                 'gauge_unit',
-    //                 'gauge_color',
-    //                 'gauge_minmax'
-    //             ]
-    //         },
-    //         {
-    //             type : 'category',
-    //             name : 'Graph',
-    //             icon : '/static/icons/SVG/13.svg',
-    //             blocks : [
-    //                 'feed_iot',
-    //                 'feed_main_title',
-    //                 'feed_title',
-    //                 'feed_color'
-    //             ]
-    //         },
-    //         {
-    //             type : 'category',
-    //             name : 'Messaging',
-    //             icon : '/static/icons/SVG/13.svg',
-    //             blocks : [
-    //                 'push_notification',
-    //                 // 'mqtt_connector',
-    //                 // 'mqtt_write'
-    //             ]
-    //         }
-    //     ]
-    // }
   ]
 };
