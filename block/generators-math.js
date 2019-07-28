@@ -147,4 +147,4 @@ Blockly.JavaScript['convert_ra_de'] = function(block) {
 	}
 	return [code, Blockly.JavaScript.ORDER_ATOMIC];
 }
-}
+};
