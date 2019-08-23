@@ -1,7 +1,5 @@
 #include "KB_music.h"
 
-#define TONE_CHANNEL 3
-
 void KB_music::begin(void) {
 
 }
@@ -26,3 +24,14 @@ void KB_music::noTone()
     ledcWrite(TONE_CHANNEL, 0);
 }
 
+void KB_music::song(std::vector<int>notes,int duration)
+{
+    for(int freq : notes){
+        if(freq == -1){
+            noTone();
+            delay(duration);
+        }else{
+            tone(freq,duration);
+        }
+    }
+}

@@ -40,6 +40,46 @@ Blockly.Blocks["music_duration_opt"] = [
 	}, "250"]
 ];
 
+
+Blockly.Blocks['music_play_notes'] = {
+  init: function() {
+    this.appendValueInput("note")
+        .setCheck("std::vector<int>")
+        .appendField("play music notes");
+
+    this.appendDummyInput()
+      .appendField("duration")
+      .appendField(new Blockly.FieldDropdown(Blockly.Blocks["music_duration_opt"]), 'DURATION');
+
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(music_colour);
+ this.setTooltip("play music");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['music_notes'] = {  
+  init: function() {
+    let f = new Blockly.FieldTextInput("C4,D4,E4");
+    f.onMouseDown_ = (e)=>{
+      Blockly.music(f.getValue(),function(newNote){
+        f.setValue(newNote.join(","));
+        f.init();
+      });
+      return e;
+    };
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage("/static/icons/icons8_move_24px.png", 15, 15, "move"))
+        .appendField(f, "notes");
+    this.setInputsInline(true);
+    this.setOutput(true, "std::vector<int>");
+    this.setColour(music_colour);
+    this.setTooltip("create music notes from B0-DS8");
+    this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks["music_note"] = {
 	init: function() {
 		this.appendDummyInput()

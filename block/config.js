@@ -206,7 +206,18 @@ module.exports = {
       color: "330",
       icon: "/static/icons/SVG/c6.svg",
       blocks: [
-        "music_note"
+        "music_note",
+        "music_notes",
+        {
+          xml:
+            `<block type="music_play_notes">
+                        <value name="note">                    
+                            <block type="music_notes">
+                                <field name="notes">C4,B4,E4</field>
+                            </block>
+                        </value>
+                    </block>`
+        }
         // 'music_rest',
         // 'music_scale',
         // 'music_set_volume',
