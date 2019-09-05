@@ -39,7 +39,7 @@ Blockly.Blocks["sensor_switch1"] = {
 		this.appendDummyInput()
 			.appendField(new Blockly.FieldImage("/static/block_icons/sw12x12.png", 20, 20, "*"))
 			.appendField(Blockly.Msg.SENSOR_SWITCH1_TITLE);
-		this.setOutput(true, 'Number');
+		this.setOutput(true, ['Number','Boolean']);
 		this.setPreviousStatement(false);
 		this.setNextStatement(false);
 		this.setColour(sensor_colour);
@@ -53,7 +53,7 @@ Blockly.Blocks["sensor_switch2"] = {
 		this.appendDummyInput()
 			.appendField(new Blockly.FieldImage("/static/block_icons/sw12x12.png", 20, 20, "*"))
 			.appendField(Blockly.Msg.SENSOR_SWITCH2_TITLE);
-		this.setOutput(true, 'Number');
+		this.setOutput(true, ['Number','Boolean']);
 		this.setPreviousStatement(false);
 		this.setNextStatement(false);
 		this.setColour(sensor_colour);
