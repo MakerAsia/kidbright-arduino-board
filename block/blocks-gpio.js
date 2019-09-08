@@ -14,14 +14,14 @@ Blockly.Blocks["output_write"] = {
 				["1", "26"],
 				["2", "27"],
 				["LED_BT", "KB_LED_BT"],
-                ["LED_WIFI", "KB_LED_WIFI"],
-                ["LED_NTP", "KB_LED_NTP"],
-                ["LED_IOT", "KB_LED_IOT"]
+				["LED_WIFI", "KB_LED_WIFI"],
+				["LED_NTP", "KB_LED_NTP"],
+				["LED_IOT", "KB_LED_IOT"]
 			]), 'OUTPUT')
 			.appendField(Blockly.Msg.STATUS)
 			.appendField(new Blockly.FieldDropdown([
-				[Blockly.Msg.STATUS_OFF, "1"],
-				[Blockly.Msg.STATUS_ON, "0"]
+				[Blockly.Msg.STATUS_OFF, "0"],
+				[Blockly.Msg.STATUS_ON, "1"]
 			]), 'STATUS');
 		this.setInputsInline(true);
 		this.setPreviousStatement(true);

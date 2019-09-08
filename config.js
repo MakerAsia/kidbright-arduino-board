@@ -8,5 +8,5 @@ module.exports = {
   email: "makerasia@gmail.com",
   git: "https://github.com/MakerAsia/kidbright-arduino-board/",
   image: "/static/display.jpg",
-  version: "1.1.3",
+  version: "1.1.4",
 };

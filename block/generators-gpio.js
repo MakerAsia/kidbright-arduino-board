@@ -5,7 +5,12 @@ module.exports = function(Blockly){
 // I/O
 // =============================================================================
 Blockly.JavaScript['output_write'] = function(block) {
-    var code = 'digitalWrite('+ block.getFieldValue('OUTPUT') + ',' + block.getFieldValue('STATUS') + ');\n';
+	  let pin = block.getFieldValue('OUTPUT');
+	  let val = block.getFieldValue('STATUS');
+	  if(pin.startsWith("KB_LED")){
+			val = "!"+val;
+		}
+    let code = 'digitalWrite('+ pin  + ',' + val + ');\n';
     return code;
 };
 

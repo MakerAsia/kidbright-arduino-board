@@ -35,7 +35,7 @@ void setup()
   music.begin();
   lm73.begin();
   matrix.displayBegin();
-
+  ldr.begin();
   ${SETUP_CODE}
   ${BLOCKSETUP}
 }

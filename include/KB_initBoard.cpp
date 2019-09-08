@@ -19,9 +19,8 @@ void KB_board::begin(void) {
     digitalWrite(KB_LED_NTP, HIGH);
     digitalWrite(KB_LED_IOT, HIGH);
 
-    ledcSetup(0, 5000, 13);
-    ledcAttachPin(KB_BUZZER, 0);
-
+    //ledcSetup(0, 5000, 13);
+    //ledcAttachPin(KB_BUZZER, 0);
 }
 
 void KB_board::pinWrite(int pin, bool state) {

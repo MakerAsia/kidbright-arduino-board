@@ -1,7 +1,7 @@
 #include "KB_music.h"
 
 void KB_music::begin(void) {
-
+    //ledcSetup(TONE_CHANNEL, 5000, 13);
 }
 
 void KB_music::tone(unsigned int frequency, unsigned long duration)
