@@ -217,7 +217,10 @@ module.exports = {
                             </block>
                         </value>
                     </block>`
-        }
+        },
+        'music_song_mario_underworld',
+        'music_song_jingle_bell',
+        'music_song_cannon_rock'
         // 'music_rest',
         // 'music_scale',
         // 'music_set_volume',

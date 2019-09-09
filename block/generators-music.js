@@ -24,6 +24,27 @@ Blockly.JavaScript["music_notes"] = function(block) {
     return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+Blockly.JavaScript["music_song_mario_underworld"] = function (block) {
+  let text_notes = block.getFieldValue("notes").split(",").map(e => e.trim());
+  let keyNote = text_notes.map(e => (e in notes) ? notes[e] : -1);
+  let code = `(std::vector<int>{${keyNote}})`;
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript["music_song_jingle_bell"] = function (block) {
+  let text_notes = block.getFieldValue("notes").split(",").map(e => e.trim());
+  let keyNote = text_notes.map(e => (e in notes) ? notes[e] : -1);
+  let code = `(std::vector<int>{${keyNote}})`;
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript["music_song_cannon_rock"] = function (block) {
+  let text_notes = block.getFieldValue("notes").split(",").map(e => e.trim());
+  let keyNote = text_notes.map(e => (e in notes) ? notes[e] : -1);
+  let code = `(std::vector<int>{${keyNote}})`;
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
 Blockly.JavaScript["music_play_notes"] = function(block) {
     let number_duration = block.getFieldValue("DURATION");
     let dropdown_instrument = block.getFieldValue("instrument");

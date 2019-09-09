@@ -80,6 +80,76 @@ Blockly.Blocks['music_notes'] = {
   }
 };
 
+Blockly.Blocks['music_song_mario_underworld'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("Mario underworld")
+        let f = new Blockly.FieldTextInput("C4,C5,A3,A4,A#3,A#4,SIL,SIL,F3,F4,D3,D4,D#3,D#4,SIL,SIL,F3,F4,D3,D4,D#3,D#4,SIL,SIL,F3,F4,D3,D4,D#3,D#4,SIL,SIL,D#4,C#4,D4,C#4,D#4,D#4,G#3,G3,C#4,C4,F#4,F4,E3,A#4,A4,G#4,D#4,B3,A#3,A3,G#3");
+        f.onMouseDown_ = (e) => {
+            Blockly.music(f.getValue(), function (newNote) {
+                f.setValue(newNote.join(","));
+                f.init();
+            });
+            return e;
+        };
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldImage("/static/icons/icons8_move_24px.png", 15, 15, "move"))
+            .appendField(f, "notes");
+        this.setInputsInline(true);
+        this.setOutput(true, "std::vector<int>");
+        this.setColour(music_colour);
+        this.setTooltip("create music notes from B0-DS8");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['music_song_jingle_bell'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("Jingle Bells")
+        let f = new Blockly.FieldTextInput("E5,E5,E5,SIL,E5,E5,E5,SIL,E5,G5,C5,D5,E5,SIL,F5,F5,SIL,F5,F5,SIL,F5,E5,E5,E5,E5,SIL,E5,D5,D5,E5,D5,G5");
+        f.onMouseDown_ = (e) => {
+            Blockly.music(f.getValue(), function (newNote) {
+                f.setValue(newNote.join(","));
+                f.init();
+            });
+            return e;
+        };
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldImage("/static/icons/icons8_move_24px.png", 15, 15, "move"))
+            .appendField(f, "notes");
+        this.setInputsInline(true);
+        this.setOutput(true, "std::vector<int>");
+        this.setColour(music_colour);
+        this.setTooltip("create music notes from B0-DS8");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['music_song_cannon_rock'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("Cannon Rock")
+        let f = new Blockly.FieldTextInput("F#4,E4,D4,C#4,B3,A3,B3,C#4,F#4,E4,D4,C#4,B3,A3,B3,C#4,D4,C#4,B3,A3,G3,F#3,G3,A3,D4,F#4,G4,A4,F#4,G4,A4,B3,C#4,D4,E4,F#4,G4,F#4,D4,E4,F#4,F#3,G3,A3,G3,F#3,G3,A3,G3,B3,A3,G3,F#3,E3,F#3,D3,E3,F#3,G3,A3,B3,G3,B3,A3,B3,C#4,D4,A3,B3,C#4,D4,E4,F#4,G4,A4,A4,F#4,G4,A4,F#4,G4,A4,A3,B3,C#4,D4,E4,F#4,G4,F#4,D4,E4,F#4,C#4,A3,A3,C#4,B3,D4,C#4,B3,A3,G3,A3,D3,E3,F#3,G3,A3,B3,G3,B3,A3,B3,C#4,D4,A3,B3,C#4,D4,E4,F#4,G4,A4");
+
+        f.onMouseDown_ = (e) => {
+            Blockly.music(f.getValue(), function (newNote) {
+                f.setValue(newNote.join(","));
+                f.init();
+            });
+            return e;
+        };
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldImage("/static/icons/icons8_move_24px.png", 15, 15, "move"))
+            .appendField(f, "notes");
+        this.setInputsInline(true);
+        this.setOutput(true, "std::vector<int>");
+        this.setColour(music_colour);
+        this.setTooltip("create music notes from B0-DS8");
+        this.setHelpUrl("");
+    }
+};
+
 Blockly.Blocks["music_note"] = {
 	init: function() {
 		this.appendDummyInput()
