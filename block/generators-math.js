@@ -119,7 +119,17 @@ Blockly.JavaScript['math_number_property'] = function(block) {
 			code = '( (int)' + arg + ' % 2 != 0)';
 			break;
 		case 'PRIME':
-			code = 'check_is_prime( (int)' + arg + ')';
+			code = `#FUNCTION
+			bool check_is_prime(int num){				
+				for(int i = 2; i <= int(sqrt(num)); ++i){
+					if(num % i == 0){
+						return false;
+					}
+				}
+				return true;
+			}#END
+			check_is_prime( (int) ${arg})`;
+			;
 			break;
 		case 'POSITIVE':
 			code = '( ' + arg + ' > 0)';
