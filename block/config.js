@@ -202,6 +202,44 @@ module.exports = {
         // 'music_set_volume',
         // 'music_get_volume'
       ]
+    },
+    {
+      name: "Time",
+      color: "330",
+      icon: "/static/icons/SVG/c6.svg",
+      blocks: [
+        {
+          xml:
+            `<block type="time_delay">
+                        <value name="delay">
+                            <shadow type="math_number">
+                                <field name="NUM">1000</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        {
+          xml:
+            `<block type="time_delay_microsec">
+                        <value name="delay">
+                            <shadow type="math_number">
+                                <field name="NUM">1000</field>
+                            </shadow>
+                        </value>
+                    </block>`
+        },
+        {
+          xml: `<sep gap="32"></sep><label text="Real Time Clock" web-class="headline"></label>`
+        },
+        "mcp7941_rtc_set_datetime",
+        "mcp7941_rtc_get_dayOfWeek",
+        "mcp7941_rtc_get_hour",
+        "mcp7941_rtc_get_minute",
+        "mcp7941_rtc_get_second",
+        "mcp7941_rtc_get_day",
+        "mcp7941_rtc_get_month",
+        "mcp7941_rtc_get_year"
+      ]
     }
   ]
 };

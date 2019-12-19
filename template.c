@@ -13,6 +13,9 @@ ${EXTINC}
 #include "KB_LDR.h"
 #include "KB_LM73.h"
 #include "KB_ht16k33.h"
+#include "MCP7941x.h"
+
+MCP7941x rtc = MCP7941x();
 
 KB_board board = KB_board();
 KB_music music = KB_music();
