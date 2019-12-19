@@ -51,3 +51,47 @@ void KB_8x16Matrix::drawBitmap(int x, int y, uint8_t *img){
     matrix.writeDisplay();
     matrix.setRotation(1);   
 }
+
+
+void KB_8x16Matrix::drawPixel(int16_t x, int16_t y, uint16_t color) {
+    matrix.setRotation(1);
+    matrix.drawPixel(x, y, color);
+    matrix.writeDisplay();
+}
+ 
+
+void KB_8x16Matrix::drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color) {
+    matrix.setRotation(1);
+    matrix.drawLine(x0, y0, x1, y1, color);
+    matrix.writeDisplay();
+}
+
+void KB_8x16Matrix::drawRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color) {
+    matrix.setRotation(1);
+    matrix.drawRect(x, y, w, h, color);
+    matrix.writeDisplay();
+}
+
+void KB_8x16Matrix::drawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color) {
+    matrix.setRotation(1);
+    matrix.drawCircle(x0, y0, r, color);
+    matrix.writeDisplay();
+}
+
+void KB_8x16Matrix::fillCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color) {
+    matrix.setRotation(1);
+    matrix.fillCircle(x0, y0, r, color);
+    matrix.writeDisplay();
+}
+
+void KB_8x16Matrix::drawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint16_t color) {
+    matrix.setRotation(1);
+    matrix.drawTriangle(x0, y0, x1, y1, x2, y2, color);
+    matrix.writeDisplay();
+}
+
+void KB_8x16Matrix::fillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1,int16_t x2, int16_t y2, uint16_t color) {
+    matrix.setRotation(1);
+    matrix.fillTriangle(x0, y0, x1, y1,x2, y2, color);
+    matrix.writeDisplay();
+}

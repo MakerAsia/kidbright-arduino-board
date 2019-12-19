@@ -7,21 +7,142 @@ module.exports = {
       blocks: [
         "display_led16x8",
         "display_led16x8_clr",
-        { xml: `<block type="display_led16x8_print">
+        {
+          xml: `<block type="display_led16x8_print">
                 <value name="VALUE">
                     <shadow type="basic_string">
                       <field name="VALUE">Hello world!</field>
                     </shadow>
                 </value>
               </block>` },
-        { xml: `<block type="display_led16x8_scroll">
+        {
+          xml: `<block type="display_led16x8_scroll">
                 <value name="VALUE">
                     <shadow type="basic_string">
                       <field name="VALUE">Hello world!</field>
                     </shadow>
                 </value>
-              </block>` },
-        'basic_string'
+              </block>`
+        },
+        'basic_string',
+        {
+          xml: `<sep gap="32"></sep><label text="Advanced 16x8 Display" web-class="headline"></label>`
+        },
+        {
+          xml: `<block type="display_led16x8_drawPixel">
+                <value name="X">
+                    <shadow type="math_number">
+                      <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Y">
+                    <shadow type="math_number">
+                      <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                </block>`
+        },
+        {
+          xml: `<block type="display_led16x8_drawline">
+                <value name="X0">
+                    <shadow type="math_number">
+                      <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="Y0">
+                    <shadow type="math_number">
+                      <field name="NUM">0</field>
+                    </shadow>
+                </value>
+                <value name="X1">
+                    <shadow type="math_number">
+                      <field name="NUM">15</field>
+                    </shadow>
+                </value>
+                <value name="Y1">
+                    <shadow type="math_number">
+                      <field name="NUM">7</field>
+                    </shadow>
+                </value>
+                </block>`
+        },
+        {
+          xml: `<block type="display_led16x8_drawRect">
+                <value name="X">
+                    <shadow type="math_number">
+                      <field name="NUM">5</field>
+                    </shadow>
+                </value>
+                <value name="Y">
+                    <shadow type="math_number">
+                      <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="W">
+                    <shadow type="math_number">
+                      <field name="NUM">6</field>
+                    </shadow>
+                </value>
+                <value name="H">
+                    <shadow type="math_number">
+                      <field name="NUM">6</field>
+                    </shadow>
+                </value>
+                </block>`
+        },
+        {
+          xml: `<block type="display_led16x8_drawcircle">
+                <value name="X">
+                    <shadow type="math_number">
+                      <field name="NUM">7</field>
+                    </shadow>
+                </value>
+                <value name="Y">
+                    <shadow type="math_number">
+                      <field name="NUM">3</field>
+                    </shadow>
+                </value>
+                <value name="R">
+                    <shadow type="math_number">
+                      <field name="NUM">2</field>
+                    </shadow>
+                </value>
+                </block>`
+        },
+        {
+          xml: `<block type="display_led16x8_drawTriangle">
+                <value name="X0">
+                    <shadow type="math_number">
+                      <field name="NUM">3</field>
+                    </shadow>
+                </value>
+                <value name="Y0">
+                    <shadow type="math_number">
+                      <field name="NUM">6</field>
+                    </shadow>
+                </value>
+                <value name="X1">
+                    <shadow type="math_number">
+                      <field name="NUM">13</field>
+                    </shadow>
+                </value>
+                <value name="Y1">
+                    <shadow type="math_number">
+                      <field name="NUM">6</field>
+                    </shadow>
+                </value>
+                <value name="X2">
+                    <shadow type="math_number">
+                      <field name="NUM">8</field>
+                    </shadow>
+                </value>
+                <value name="Y2">
+                    <shadow type="math_number">
+                      <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                </block>`
+        }
         // 'basic_TFT_setRotation',
         // 'basic_TFT_fillScreen',
         // 'basic_TFT_setTextSize',
